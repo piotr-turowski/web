@@ -1,0 +1,310 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  line-height: 1.8;
+  margin: 0;
+  font-family: helvetica;
+  scroll-behavior: smooth;
+}
+
+/* navigation */
+header {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+nav {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.topnav {
+  margin: 0px;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+.topnav li {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px
+}
+
+li,
+a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+a {
+  display: block;
+  padding: 10px 20px;
+
+}
+
+a:hover {
+  color: white;
+  background: #FB7C8C;
+  transition: 0.4s;
+}
+
+/* Parallax */
+.parallax-1 {
+  /* The image used */
+  background-image: linear-gradient(rgba(21, 165, 181, 0.8), rgba(30, 118, 133, 0.8)), url("img/alphabets-close-up-connection-532173.jpg");
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+
+.front {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+.front .logo {
+  text-align: center;
+  letter-spacing: -1px;
+  font-weight: 800;
+  color: #FB7C8C;
+  transition: 0.5s;
+  font-size: 3rem;
+}
+
+.front .front-paragraph {
+  text-transform: uppercase;
+  letter-spacing: 0.45rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.front .front-text {
+  font-weight: 800;
+  color: #FB7C8C;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+/* sticky bar menu*/
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: rgba(21, 165, 181, 0.8);
+  color: white;
+  box-shadow: 0 1px 10px #333;
+  transition: 0.5s;
+}
+
+
+/* menu button*/
+.bars {
+  display: none;
+  float: right;
+}
+
+div.bar1,
+div.bar2,
+div.bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 7px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  //-webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  //-webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -6px);
+}
+
+
+
+
+@media (max-width: 550px) {
+  .bars {
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+
+  }
+
+  .topnav li:not(:last-child) {
+      display: none;
+  }
+
+  .topnav.responsive li {
+      display: block;
+  }
+
+  .topnav.responsive {
+      position: relative;
+      background: rgb(21, 165, 181);
+      box-shadow: 0 1px 10px #333;
+  }
+
+  .fixed {
+      height: 50px
+  }
+}
+
+.feature-box {
+  padding: 50px 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature-box.one>div {
+  display: block;
+  ;
+  width: 300px;
+  color: #EEE;
+  text-align: center;
+}
+
+.feature-box>div>h3 {
+  text-transform: uppercase;
+}
+
+.one {
+  background: #282E34;
+}
+
+.two {
+  background: rgb(75, 86, 97);
+}
+
+.three {
+  background: #EEE;
+}
+
+.parallax-2,
+.parallax-3,
+.parallax-4 {
+  /* Set a specific height */
+  height: 50vh;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.7;
+}
+
+.parallax-2 {
+  background-image: url("img/artificial-intelligence-blur-close-up-546819.jpg");
+}
+
+.parallax-3 {
+  /* The image used */
+  background-image: url("img/businessman-cellphones-cellular-telephone-1927509.jpg");
+
+}
+
+.parallax-4 {
+  background-image: url("img/architect-architecture-blue-print-110469.jpg");
+}
+
+/*main caption*/
+.caption {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+
+.bg-title {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+
+}
+
+#map {
+  width: 400px;
+  height: 400px;
+  margin: 50px;
+}
+
+footer {
+  background: rgb(30, 118, 133);
+  color: white;
+  text-align: center;
+}
+
+#slider {
+width:720px;
+height:400px;
+overflow: hidden;
+}
+#slider .slides {
+  display: block;
+  width: 6000px;
+  height: 400px;
+  margin:0;
+  padding: 0;;
+}
+#slider .slide {
+  float: left;
+  list-style-type: none;
+  width:720px;
+  height: 400px;
+}
+
+.slide1 {
+  background: tomato;
+}
+.slide2 {
+  background: yellowgreen;
+}
+.slide3 {
+  background: violet;
+}
+.slide4 {
+  background: dodgerblue;
+}
+.slide5 {
+  background: orangered;
+}

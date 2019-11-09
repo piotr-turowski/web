@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piotr Turowski Front-End Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.8;
+            margin: 0;
+            font-family: helvetica;
+            scroll-behavior: smooth;
+        }
+
+        /* navigation */
+        header {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+        }
+
+        nav {
+            position: absolute;
+            z-index: 2;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .topnav {
+            margin: 0px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+
+        .topnav li {
+            display: inline-block;
+            margin: 0px;
+            padding: 0px
+        }
+
+        li,
+        a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        a {
+            display: block;
+            padding: 10px 20px;
+
+        }
+
+        a:hover {
+            color: white;
+            background: #FB7C8C;
+            transition: 0.4s;
+        }
+
+        /* Parallax */
+        .parallax-1 {
+            /* The image used */
+            background-image: linear-gradient(rgba(21, 165, 181, 0.8), rgba(30, 118, 133, 0.8)), url("img/alphabets-close-up-connection-532173.jpg");
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            height: 100vh;
+        }
+
+        .front {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 2.5rem;
+        }
+
+        .front .logo {
+            text-align: center;
+            letter-spacing: -1px;
+            font-weight: 800;
+            color: #FB7C8C;
+            transition: 0.5s;
+            font-size: 3rem;
+        }
+
+        .front .front-paragraph {
+            text-transform: uppercase;
+            letter-spacing: 0.45rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .front .front-text {
+            font-weight: 800;
+            color: #FB7C8C;
+            text-transform: uppercase;
+            font-size: 3rem;
+        }
+
+        /* sticky bar menu*/
+        .fixed {
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            background: rgba(21, 165, 181, 0.8);
+            color: white;
+            box-shadow: 0 1px 10px #333;
+            transition: 0.5s;
+        }
+
+
+        /* menu button*/
+        .bars {
+            display: none;
+            float: right;
+        }
+
+        div.bar1,
+        div.bar2,
+        div.bar3 {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 7px 0;
+            transition: 0.4s;
+        }
+
+        /* Rotate first bar */
+        .change .bar1 {
+            //-webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+            transform: rotate(-45deg) translate(-8px, 6px);
+        }
+
+        /* Fade out the second bar */
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        /* Rotate last bar */
+        .change .bar3 {
+            //-webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+            transform: rotate(45deg) translate(-8px, -6px);
+        }
+
+
+
+
+        @media (max-width: 550px) {
+            .bars {
+                display: block;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+
+            }
+
+            .topnav li:not(:last-child) {
+                display: none;
+            }
+
+            .topnav.responsive li {
+                display: block;
+            }
+
+            .topnav.responsive {
+                position: relative;
+                background: rgb(21, 165, 181);
+                box-shadow: 0 1px 10px #333;
+            }
+
+            .fixed {
+                height: 50px
+            }
+        }
+
+        .feature-box {
+            padding: 50px 80px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .feature-box.one>div {
+            display: block;
+            ;
+            width: 300px;
+            color: #EEE;
+            text-align: center;
+        }
+
+        .feature-box>div>h3 {
+            text-transform: uppercase;
+        }
+
+        .one {
+            background: #282E34;
+        }
+
+        .two {
+            background: #282E34;
+        }
+
+        .three {
+            background: orange;
+        }
+
+        .parallax-2,
+        .parallax-3,
+        .parallax-4 {
+            /* Set a specific height */
+            height: 50vh;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            opacity: 0.7;
+        }
+
+        .parallax-2 {
+            background-image: url("img/artificial-intelligence-blur-close-up-546819.jpg");
+        }
+
+        .parallax-3 {
+            /* The image used */
+            background-image: url("img/businessman-cellphones-cellular-telephone-1927509.jpg");
+
+        }
+
+        .parallax-4 {
+            background-image: url("img/architect-architecture-blue-print-110469.jpg");
+        }
+
+        /*main caption*/
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 40%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+
+        .bg-title {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+
+        }
+
+        #map {
+            width: 400px;
+            height: 400px;
+            margin: 50px;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul class="topnav" id="myNavbar">
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="#contact">contact</a></li>
+                <li>
+                    <div class="bars">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="parallax-1" id="home">
+        <div class="front">
+            <p class="logo">
+                < pt />
+                </h1>
+                <p class="front-paragraph">Frontend Developer</p>
+                <p class="front-text">Piotr Turowski</h1>
+        </div>
+    </section>
+    <section class="parallax-2" id="about">
+        <div class="caption">
+            <span class="bg-title">About</span>
+        </div>
+    </section>
+
+    <section class="feature-box one">
+        <div>
+            <h3>about me</h3>
+            <p>Hello! I am Piotr Turowski. I work as web designer and front-end developer. I have passion for pixel
+                perfect, minimal and easy to use interfaces.</p>
+        </div>
+        <div>
+            <h3>courses & workshops</h3>
+            <p>freeCodeCamp: Responsive Web Design Certification, JavaScript Algorithms and Data Structures
+                Certification</p>
+        </div>
+        <div>
+            <h3>skills</h3>
+            <p>HTML, CSS, JavaScript, JQuery, SQL, GitHub, Linux, Bootstrap</p>
+        </div>
+    </section>
+
+    <section class="parallax-3" id="portfolio">
+        <div class="caption">
+            <span class="bg-title">Portfolio</span>
+        </div>
+    </section>
+
+    <section class="feature-box two">
+        <div id="slider">
+            <ul class="slides">
+                <li class="slide slide1"></li>
+                <li class="slide slide2"></li>
+                <li class="slide slide3"></li>
+                <li class="slide slide4"></li>
+                <li class="slide slide5"></li>
+                <li class="slide slide1"></li>
+            </ul>
+
+        </div>
+    </section>
+
+    <section class="parallax-4" id="contact">
+        <div class="caption">
+            <span class="bg-title">Contact</span>
+        </div>
+    </section>
+
+    <section class="feature-box three">
+
+
+
+
+        form + google maps
+        <div id="map"></div>
+        <script>
+            function init() {
+                var mapOptions = {                                 // Set up the map options
+                    center: new google.maps.LatLng(40.782710, -73.965310),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    zoom: 13
+                };
+                var venueMap;                                      // Map() draws a map
+                venueMap = new google.maps.Map(document.getElementById('map'), mapOptions);
+            }
+
+            function loadScript() {
+                var script = document.createElement('script');     // Create <script> element
+                script.src = 'http://maps.googleapis.com/maps/api/js?sensor=false&callback=init';
+                document.body.appendChild(script);                 // Add element to page
+            }
+
+            window.onload = loadScript;    
+        </script>
+
+    </section>
+
+
+
+
+
+
+
+    <footer class=center>
+        <i class=" fa fa-facebook-official "></i>
+        <i class=" fa fa-instagram "></i>
+        <i class=" fa fa-snapchat "></i>
+        <i class=" fa fa-pinterest-p "></i>
+        <i class=" fa fa-twitter"></i>
+        <i class="fa fa-linkedin    "></i>
+        <p>Piotr Turowski 2019&copy;</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
+
+
+
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSkqbekgLXSPOHjpSfaMtW8y1A0AS76F0&callback=myMap"
+        type="text/javascript"></script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSkqbekgLXSPOHjpSfaMtW8y1A0AS76F0&callback=myMap"></script>
+
+    <script>
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
